@@ -16,8 +16,8 @@ const App = () => {
     <BrowserRouter basename="/frontapp1">
       <Routes>
         <Route path="/" element={<Home2 />} />
-        <Route path="/login" element={<Login formData={formData} setFormData={setFormData} />} />
-        <Route path="/signup" element={<SignUp formData={formData} setFormData={setFormData} />} />
+        <Route path="/frontapp1/login" element={<Login formData={formData} setFormData={setFormData} />} />
+        <Route path="/frontapp1/signup" element={<SignUp formData={formData} setFormData={setFormData} />} />
         <Route path="/userDashboard" element={<UserDashboard />} />
         <Route path="/adminDashboard" element={<AdminDashboard />} />
       </Routes>
