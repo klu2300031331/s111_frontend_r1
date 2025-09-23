@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { callApi } from "./api";
 import "./Login.css";
 
+const BASE_URL = "http://localhost:9090/springapp1"; // ✅ backend deployed WAR path
+
 const Login = ({ onClose }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -20,12 +22,7 @@ const Login = ({ onClose }) => {
     });
 
     try {
-      const res = await callApi(
-        "POST",
-        "http://localhost:7777/users/signin",
-        data
-      );
-
+      const res = await callApi("POST", `${BASE_URL}/users/signin`, data);
       const rdata = res.split("::");
 
       if (rdata[0] === "200") {
@@ -83,24 +80,14 @@ const Login = ({ onClose }) => {
             </label>
 
             <div className="button-group">
-              <button type="submit" className="submit-btn">
-                Login
-              </button>
-              <button type="button" onClick={() => navigate("/")} className="cancel-btn">
-                Cancel
-              </button>
+              <button type="submit" className="submit-btn">Login</button>
+              <button type="button" onClick={() => navigate("/")} className="cancel-btn">Cancel</button>
             </div>
 
-            {/* Extra Buttons */}
             <div className="extra-buttons">
-              <button
-                type="button"
-                className="signup-btn"
-                onClick={() => navigate("/signup")}
-              >
+              <button type="button" className="signup-btn" onClick={() => navigate("/signup")}>
                 Signup
               </button>
-              
             </div>
           </form>
         </div>
