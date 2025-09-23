@@ -3,6 +3,8 @@ import { callApi } from "./api";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = "http://localhost:9090/springapp1"; // ✅ backend deployed WAR path
+
 const SignUp = ({ onClose }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -33,7 +35,7 @@ const SignUp = ({ onClose }) => {
     });
 
     try {
-      const res = await callApi("POST", "http://localhost:7777/users/signup", data);
+      const res = await callApi("POST", `${BASE_URL}/users/signup`, data);
       const [status, message] = res.split("::");
 
       alert(message);
@@ -49,7 +51,6 @@ const SignUp = ({ onClose }) => {
 
   return (
     <div className="signup-container">
-      {/* 🔹 Background Video */}
       <video autoPlay muted loop className="background-video">
         <source
           src="/vecteezy_4k-slow-motion-of-open-book-with-blank-page-on-black_9295506.mp4"
@@ -108,39 +109,21 @@ const SignUp = ({ onClose }) => {
             </label>
             <label>
               Select Role*
-              <select
-                name="role"
-                value={formData.role}
-                onChange={handleChange}
-                required
-              >
+              <select name="role" value={formData.role} onChange={handleChange} required>
                 <option value="">-- Select Role --</option>
                 <option value="1">Admin</option>
                 <option value="2">User</option>
               </select>
             </label>
-            <br />
+
             <div className="button-group">
               <button type="submit" className="submit-btn">Register</button>
               <button type="button" onClick={onClose} className="cancel-btn">Cancel</button>
             </div>
 
-            {/* 🔹 Extra Buttons */}
             <div className="extra-buttons">
-              <button
-                type="button"
-                className="login-btn"
-                onClick={() => navigate("/login")}
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                className="home-btn"
-                onClick={() => navigate("/")}
-              >
-                Back to Home
-              </button>
+              <button type="button" className="login-btn" onClick={() => navigate("/login")}>Login</button>
+              <button type="button" className="home-btn" onClick={() => navigate("/")}>Back to Home</button>
             </div>
           </form>
         </div>
