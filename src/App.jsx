@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // <-- use BrowserRouter
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Login from "./Login";
@@ -13,7 +13,8 @@ const App = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
 
   return (
-    <BrowserRouter basename="/lms"> {/* 👈 add basename here */}
+    // ✅ basename must match the Vite base
+    <BrowserRouter basename="/frontapp1">
       <Routes>
         <Route path="/" element={<Home2 />} />
         <Route path="/login" element={<Login formData={formData} setFormData={setFormData} />} />
