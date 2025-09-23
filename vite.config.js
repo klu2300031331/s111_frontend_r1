@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: './'   // ✅ important: use relative paths
+  base: '/frontapp1/'  // ✅ important: use relative paths
 })
