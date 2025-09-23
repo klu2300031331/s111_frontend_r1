@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
@@ -13,7 +12,7 @@ const App = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
 
   return (
-    // ✅ basename must match the Vite base
+    // ✅ basename must match the Vite base and Tomcat path
     <BrowserRouter basename="/frontapp1">
       <Routes>
         <Route path="/" element={<Home2 />} />
