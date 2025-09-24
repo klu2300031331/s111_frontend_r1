@@ -2,6 +2,7 @@ import React from 'react'
 import { FaUserCircle } from "react-icons/fa";
 import Home from './Home'
 import './App.css'
+import { Link } from "react-router-dom"; // ✅ Import Link
 
 function Home2() {
   return (
@@ -29,8 +30,9 @@ function Home2() {
         </div>
         <div className="nav-right">
           <FaUserCircle className="user-icon" />
-          <a href="/frontapp1/login">Log In </a>
-          <a href="/frontapp1/signup">Sign Up</a>
+          {/* ✅ Use Link instead of <a> */}
+          <Link to="/login">Log In</Link>
+          <Link to="/signup">Sign Up</Link>
         </div>
       </nav>
 
