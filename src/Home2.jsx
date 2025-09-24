@@ -29,8 +29,8 @@ function Home2() {
         </div>
         <div className="nav-right">
           <FaUserCircle className="user-icon" />
-          <a href="/login">Log In </a>
-          <a href="/signup">Sign Up</a>
+          <a href="/frontapp1/login">Log In </a>
+          <a href="/frontapp1/signup">Sign Up</a>
         </div>
       </nav>
 
