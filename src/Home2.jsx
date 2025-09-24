@@ -31,8 +31,8 @@ function Home2() {
         <div className="nav-right">
           <FaUserCircle className="user-icon" />
           {/* ✅ Use Link instead of <a> */}
-          <Link to="/login">Log In</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/frontapp1/login">Log In</Link>
+          <Link to="/frontapp1/signup">Sign Up</Link>
         </div>
       </nav>
 
